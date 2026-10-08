@@ -2,10 +2,10 @@
 
 # 🐚 Shell We Begin?
 
-### A friendly, no-jargon path from *"I have never opened the terminal"* to *"I run Claude Code from my phone."*
+### Get real work done with Claude on your own Mac, no programming and no terminal required.
 
 [![Made for humans](https://img.shields.io/badge/made%20for-humans%2C%20not%20programmers-ff69b4)](#who-this-is-for)
-[![macOS](https://img.shields.io/badge/works%20on-macOS%2013%2B-black?logo=apple)](docs/00-before-you-start.md)
+[![macOS](https://img.shields.io/badge/works%20on-macOS-black?logo=apple)](#what-you-need)
 [![Claude Code](https://img.shields.io/badge/powered%20by-Claude%20Code-d97757)](https://code.claude.com/docs)
 [![Updated](https://img.shields.io/badge/guide-updated%20regularly-2ea44f)](#this-guide-grows)
 
@@ -13,69 +13,43 @@
 
 ---
 
-You do not need to be a programmer to use the most powerful AI tools that exist today.
-You need a terminal, about ninety minutes, and someone to tell you *exactly* what to type.
+Claude Code is an AI that can **do things on your computer**: organise files, write and format documents, build little tools for your job, and keep working while you're away. It used to live only in the terminal. Now it also lives in the normal Claude desktop app, in a tab called **Code**.
 
-This page is that someone.
+This page gets you from zero to "Claude is doing my weekly paperwork, and I can check on it from my phone" in about thirty minutes. The only thing you'll ever type is plain English.
 
 > [!TIP]
-> **Read it like a recipe.** Do the steps in order. Every step tells you what to type, what you should see, and what to do if you don't see it. You cannot break your Mac by following this guide.
+> **Read it like a recipe.** Four steps, in order. Each one says what to click, what to paste, and what you should see.
 
 ## Who this is for
 
-- You have a Mac and a Claude subscription (Pro or Max), or you're about to get one.
-- You've heard of "the terminal" and it sounds like something hackers use in movies.
-- You want an AI assistant that can actually **do things on your computer**: organise files, write documents, build tools for your job, and keep working while you're away from your desk.
-
-If that's you, welcome. If you're already comfortable in a terminal, skim to [Step 5](docs/05-claude-code.md) and [Step 7](docs/07-phone-access.md).
+- You have a Mac and a Claude **Pro** or **Max** subscription (or you're about to get one).
+- You are not a programmer and don't want to become one.
+- You have a job with repeatable paperwork: client programs, reports, handouts, spreadsheets, letters.
 
 ## The path
 
 | # | Step | What you get | Time |
 |---|------|--------------|------|
-| 0 | [Before you start](docs/00-before-you-start.md) | A checklist, and the two ideas that make everything else click | 5 min |
-| 1 | [Meet the terminal + Homebrew](docs/01-terminal-and-homebrew.md) | Your first commands, and the "app store" that installs everything else | 15 min |
-| 2 | [Ghostty](docs/02-ghostty.md) | A beautiful, fast terminal to replace the built-in one | 5 min |
-| 3 | [Nerd Fonts](docs/03-nerd-fonts.md) | Icons and symbols render properly instead of as little boxes | 5 min |
-| 4 | [Terminal basics](docs/04-terminal-basics.md) | `pwd`, `ls`, `cd` and friends: enough to never feel lost | 20 min |
-| 5 | [Claude Code](docs/05-claude-code.md) | The AI assistant, installed, logged in, and doing its first job for you | 15 min |
-| 6 | [Herdr](docs/06-herdr.md) | Sessions that keep running when you close the window | 10 min |
-| 7 | [Your phone](docs/07-phone-access.md) | Check on, steer, and talk to your running sessions from anywhere | 10 min |
-| 8 | [Skills](docs/08-skills.md) | Teach Claude a repeatable job, like the ones in this repo | 10 min |
+| 1 | [Install the Claude app and open the Code tab](docs/01-claude-desktop.md) | Claude, running on your Mac, inside a folder you choose | 10 min |
+| 2 | [Install this repo and a skill (by asking Claude)](docs/02-install-a-skill.md) | A ready-made, repeatable job Claude knows how to do | 10 min |
+| 3 | [Use it from your phone](docs/03-phone.md) | Check on, steer, and talk to running sessions from anywhere | 5 min |
+| 4 | [Make Claude work the way you do](docs/04-working-with-claude.md) | How to ask, how to say no, where files live, how to make your own skills | 10 min |
 
-Then keep these two open in a tab:
-
-- 📋 [**Cheat sheet**](docs/cheat-sheet.md): every command and shortcut from this guide on one page
-- 🩹 [**Troubleshooting**](docs/99-troubleshooting.md): the ten things that go wrong, and their fixes
+Keep these two handy: 📋 [**Cheat sheet**](docs/cheat-sheet.md) · 🩹 [**Troubleshooting**](docs/troubleshooting.md)
 
 ```mermaid
 flowchart LR
-    A[Terminal.app] --> B[Homebrew]
-    B --> C[Ghostty]
-    B --> D[Nerd Font]
-    C --> E[Terminal basics]
-    D --> E
-    E --> F[Claude Code]
-    F --> G[Herdr]
-    G --> H[📱 Phone]
-    F --> I[Skills]
+    A[Claude desktop app] --> B[Code tab, pick a folder]
+    B --> C["Paste one prompt:\ninstall the skill"]
+    C --> D[Say what you want]
+    D --> E[📱 Phone: Remote Control]
 ```
 
-## What you'll have at the end
+## What a skill is
 
-- A terminal that looks good and feels fast.
-- Claude Code installed and signed in, working inside folders you choose.
-- Sessions that survive closing your laptop lid, thanks to Herdr.
-- The Claude app on your phone showing those same sessions, with push notifications when Claude needs you.
-- At least one **skill**: a reusable, written-down way of doing a specific job that Claude follows every time.
+A **skill** is a folder of plain-English instructions, templates, and small helper scripts. Claude reads it automatically whenever your request matches, and then does that job the same careful way every time. You install one by asking Claude to install it. You never open the folder yourself.
 
 ## Skills in this repo
-
-Skills are folders with instructions that Claude Code reads automatically. Install one with a single command (explained in [Step 8](docs/08-skills.md)):
-
-```bash
-./scripts/install-skill.sh pt-client-programming
-```
 
 | Skill | For whom | What it does |
 |-------|----------|--------------|
@@ -83,15 +57,26 @@ Skills are folders with instructions that Claude Code reads automatically. Insta
 
 More skills will appear here over time. Have a job you repeat every week? [Open an issue](../../issues) and describe it.
 
+## What you need
+
+- A Mac running macOS 13 or newer (Apple menu  → About This Mac).
+- A Claude account on the Pro or Max plan. The free plan doesn't include Claude Code.
+- Your Mac's login password, in case macOS asks to install Apple's developer tools (one click, happens once).
+- Your phone, for step 3.
+
 ## This guide grows
 
-This is a living page. Tools change, commands change, and I learn better ways to explain things. Press **Watch** at the top of the page to get notified when it updates, and **Star** it if it helped you.
+This is a living page. The app changes, and I learn better ways to explain things. Press **Watch** at the top to get notified when it updates, **Star** it if it helped.
 
 ## A note on safety and privacy
 
-- Claude Code only works inside the folder you start it in, and asks before it changes anything (until you tell it not to).
+- Claude works inside the folder you pick for a session and, in Manual mode, asks before changing anything.
 - Everything you type, and the files Claude reads, are sent to Anthropic to generate responses. Don't point it at things you wouldn't email.
-- The clinical skill in this repo talks about this in detail, because health information deserves extra care. See its [README](skills/pt-client-programming/README.md#privacy).
+- The clinical skill talks about this in detail, because health information deserves extra care. See its [README](skills/pt-client-programming/README.md#privacy).
+
+## Prefer the terminal?
+
+The original version of this guide, which sets up a terminal (Ghostty), fonts, a session manager (Herdr) and the command-line Claude Code, lives in [`docs/advanced-terminal/`](docs/advanced-terminal/). Everything in the skills works the same either way.
 
 ## License
 

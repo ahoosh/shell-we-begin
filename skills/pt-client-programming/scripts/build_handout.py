@@ -36,7 +36,9 @@ except ImportError:
 MARKER_RE = re.compile(r"\[\[(CONFIRM|MISSING)[^\]]*\]\]")
 SKILL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PT_HOME = os.environ.get("PT_PROGRAMS_HOME", os.path.expanduser("~/PT-Programs"))
-SOFFICE_CANDIDATES = ["soffice", "/Applications/LibreOffice.app/Contents/MacOS/soffice"]
+SOFFICE_CANDIDATES = ["soffice", "/Applications/LibreOffice.app/Contents/MacOS/soffice",
+                      os.path.expanduser("~/Applications/LibreOffice.app/Contents/MacOS/soffice")]
+PANDOC = shutil.which("pandoc") or os.path.join(PT_HOME, ".tools", "bin", "pandoc")
 CHROME_CANDIDATES = ["/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", "google-chrome", "chromium"]
 
 
@@ -186,7 +188,7 @@ def build_html(src_md, out_html, conf, resource_path, src_dir):
          tempfile.NamedTemporaryFile("w", suffix=".html", delete=False, encoding="utf-8") as ha:
         hb.write(header); ha.write(footer); hb_path, ha_path = hb.name, ha.name
     try:
-        proc = subprocess.run(["pandoc", src_md, "-o", out_html, "--from", "markdown", "--to", "html5",
+        proc = subprocess.run([PANDOC, src_md, "-o", out_html, "--from", "markdown", "--to", "html5",
                                "--standalone", "--embed-resources", "--css", css,
                                "--include-before-body", hb_path, "--include-after-body", ha_path,
                                "--resource-path", resource_path, "--metadata", "lang=en"],
@@ -240,7 +242,7 @@ def main():
     a = ap.parse_args()
     if a.all:
         a.pdf = a.html = True
-    if not shutil.which("pandoc"):
+    if not (shutil.which("pandoc") or os.path.exists(PANDOC)):
         sys.exit("pandoc not found. Run scripts/setup.sh")
     if not os.path.exists(a.source):
         sys.exit(f"source not found: {a.source}")
@@ -258,7 +260,7 @@ def main():
     with tempfile.NamedTemporaryFile("w", suffix=".md", delete=False, encoding="utf-8", dir=src_dir) as tmp:
         tmp.write(text); tmp_path = tmp.name
     try:
-        proc = subprocess.run(["pandoc", tmp_path, "-o", out_docx, "--from", "markdown", "--to", "docx",
+        proc = subprocess.run([PANDOC, tmp_path, "-o", out_docx, "--from", "markdown", "--to", "docx",
                                "--resource-path", resource_path], capture_output=True, text=True)
         if proc.returncode != 0:
             sys.exit(f"pandoc failed:\n{proc.stderr}")

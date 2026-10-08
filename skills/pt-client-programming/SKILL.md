@@ -48,7 +48,7 @@ All scripts live in `${CLAUDE_SKILL_DIR}/scripts/`. Run them with that prefix re
 
 ## Start of every task
 
-1. If the workspace is missing, run `${CLAUDE_SKILL_DIR}/scripts/setup.sh` and stop until `practice.conf` has been filled in.
+1. If the workspace is missing, run `${CLAUDE_SKILL_DIR}/scripts/setup.sh` (ask once whether they want `--with-pdf`, a large LibreOffice download that makes PDFs match the Word file) and stop until `practice.conf` has been filled in. If the script says Python is missing, tell the clinician to click **Install** on the macOS developer-tools dialog, wait, and say "done"; then re-run.
 2. Identify the client code. If the clinician gives a name, look it up with `scripts/find_client.sh "<name>"` (it searches `profile.md` files only). If nothing matches, ask; never create a client implicitly.
 3. Run `${CLAUDE_SKILL_DIR}/scripts/load_client.sh <CODE>` and paste its report verbatim. It states: approved version and date, drafts present, last visit note, unresolved markers, adjuncts, and whether images exist.
 4. Say which mode you are in (below) and what you will and won't touch. Then proceed.

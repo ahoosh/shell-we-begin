@@ -28,14 +28,16 @@ If you have tried to do this with a chat assistant you know the failure modes: i
 
 ## Install
 
-From the root of this repo:
+Easiest: paste the prompt from [Step 2 of the main guide](../../docs/02-install-a-skill.md) into the Claude desktop app's Code tab and let Claude do it.
+
+By hand, from the root of this repo:
 
 ```bash
 ./scripts/install-skill.sh pt-client-programming
 ~/.claude/skills/pt-client-programming/scripts/setup.sh --with-pdf
 ```
 
-`setup.sh` installs the document tools (pandoc, a small Python package for Word files, and with `--with-pdf` LibreOffice for PDF conversion), creates `~/PT-Programs/`, and copies the seed library and a `practice.conf` for you to fill in with your name, credentials, practice, and the links that go in your header and footer.
+`setup.sh` needs no Homebrew. It uses Apple's Command Line Tools Python, downloads the official pandoc binary if none is installed, creates `~/PT-Programs/`, and copies the seed library and a `practice.conf` for you to fill in with your name, credentials, practice, and the links that go in your header and footer. With `--with-pdf` it also installs LibreOffice (Homebrew if present, otherwise the official disk image into `~/Applications`) for PDFs that match the Word file.
 
 **New here? Read [HOW-TO-USE.md](HOW-TO-USE.md)**: a plain-language walkthrough with the exact sentences to say for a new client, a visit update, an export, and an approval.
 
@@ -98,6 +100,6 @@ This matters more here than in most skills, so plainly:
 
 ## Requirements
 
-- macOS with Homebrew (see the main guide, steps 1–5)
-- Claude Code
-- `pandoc` and Python 3 (installed by `setup.sh`); LibreOffice for best-quality PDFs (`setup.sh --with-pdf`)
+- macOS and the Claude desktop app (or the Claude Code CLI)
+- Apple's Command Line Tools (macOS offers to install them the first time they're needed)
+- `pandoc`, Python packages and optionally LibreOffice, all handled by `setup.sh`

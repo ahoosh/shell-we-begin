@@ -42,4 +42,4 @@ if [[ -f "$DST/scripts/setup.sh" ]]; then
   echo "  $DST/scripts/setup.sh"
 fi
 echo
-echo "Restart Claude Code and type / to see it."
+echo "Start a new session (desktop app: sidebar → New session; CLI: restart claude) and type / to see it."

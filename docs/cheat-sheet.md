@@ -1,94 +1,39 @@
 # Cheat sheet
 
-Print this. Or don't; it's one `open` away.
+## Desktop app, Code tab
 
-## Terminal
+| Want to… | Do |
+|----------|----|
+| Start | Code tab → **Local** → **Select folder** → type |
+| Stop Claude | Stop button, or type a correction and Enter |
+| Add a file | `@filename`, drag it in, or the attachment button (images, PDFs) |
+| See all skills and commands | Type `/` |
+| Change how much it asks | Permission selector: Manual · Accept edits · Auto · Plan |
+| Review what changed | Click the `+12 −1` indicator → diff view |
+| Second task at once | Sidebar → New session |
+| Phone access | Laptop icon by the session title → **Remote Control** on |
+| Settings | `/config` or the app's **Settings → Claude Code** |
 
-| Command | Meaning |
-|---------|---------|
-| `pwd` | Where am I? |
-| `ls` · `ls -la` | What's here? (detailed, with hidden files) |
-| `cd folder` · `cd ..` · `cd ~` | Go into / go up / go home |
-| `mkdir name` | Make a folder |
-| `touch file` | Make an empty file |
-| `cat file` · `less file` | Show a file (all / scrollable, `q` to quit) |
-| `open .` · `open file` | Open in Finder / in its app |
-| `cp a b` · `mv a b` · `rm a` | Copy · move/rename · delete (permanent!) |
-| `echo "text" > file` | Write text into a file (`>>` appends) |
-| `man cmd` | Manual for a command |
-| `which cmd` | Where is this command installed? |
-| `brew install x` · `brew upgrade x` | Install / update a tool |
+## Install / update a skill (paste into a session)
 
-| Key | Meaning |
-|-----|---------|
-| **Tab** | Auto-complete |
-| **↑** | Previous command |
-| **Ctrl C** | Stop / cancel |
-| **Ctrl D** | Exit |
-| **Ctrl R** | Search history |
-| **⌘K** | Clear screen (Ghostty) |
-| **q** | Quit a pager |
+```
+Go to ~/Projects/shell-we-begin (download https://github.com/ahoosh/shell-we-begin if it isn't there), run git pull if possible, then run ./scripts/install-skill.sh pt-client-programming. Don't touch ~/PT-Programs.
+```
 
-## Ghostty
+## pt-client-programming, the five sentences
 
-| Key | Action |
-|-----|--------|
-| **⌘T** / **⌘W** | New / close tab |
-| **⌘D** / **⌘ Shift D** | Split right / down |
-| **⌘ ,** / **⌘ Shift ,** | Open / reload config |
-| **⌘ +** / **⌘ -** | Font bigger / smaller |
+| Say | Mode |
+|-----|------|
+| "New client C-0001, first name Sam, …" | NEW CLIENT |
+| "Build the handout." | BUILD |
+| "Export the draft so I can read it." | EXPORT |
+| "Approve draft_2026-10-07_a: first-visit program." | APPROVE |
+| "C-0001: change wall slide to 2 sets. Nothing else." | PATCH |
 
-Config: `~/.config/ghostty/config`
-
-## Claude Code
-
-| Command | Action |
-|---------|--------|
-| `claude` | Start in this folder |
-| `claude -c` | Continue the last conversation here |
-| `claude -r` | Pick an older conversation |
-| `/help` · `/clear` · `/exit` | Commands · fresh start · leave |
-| `/model` | Switch model |
-| `/init` | Create a CLAUDE.md for this folder |
-| `/rc` · `/rc Name` | Remote Control on (phone access) |
-| `/mobile` | QR code to install the phone app |
-| `/config` | Settings, including push notifications |
-| `/terminal-setup` | Fix Shift+Enter if it sends instead of newlining |
-
-| Key | Action |
-|-----|--------|
-| **Esc** | Interrupt Claude |
-| **Shift Enter** | New line |
-| **Shift Tab** | Cycle permission mode |
-| **Ctrl V** | Paste an image |
-| `@` | Mention a file |
-
-## Herdr (prefix = Ctrl B, release, then key)
-
-| Key | Action |
-|-----|--------|
-| `q` | Detach (everything keeps running); `herdr` to come back |
-| `v` / `-` | Split right / down |
-| `h j k l` | Move focus |
-| `z` | Zoom pane |
-| `x` | Close pane |
-| `c` · `n` · `p` | New tab · next · previous |
-| `Shift N` · `w` | New workspace · switch workspace |
-| `g` | Go-to picker |
-| `?` | All shortcuts |
-
-`herdr server stop` shuts everything down. `brew upgrade herdr` updates.
+Modifiers: `ROW PATCH ONLY` · `TABLE ONLY` · `TABLE ONLY — DOCX` · `PLAIN TEXT`
 
 ## Phone
 
-1. `/mobile` → install the app, same account.
-2. `/rc` in a session → scan the QR.
-3. `/config` → push notifications on.
-4. Mac plugged in, lid open, "prevent sleeping when display is off" on.
-
-## Skills
-
-```bash
-cd ~/Projects/shell-we-begin && git pull
-./scripts/install-skill.sh pt-client-programming
-```
+1. Claude app on the phone, same account, notifications on.
+2. Laptop icon → Remote Control on (or Settings → Claude Code → connect new sessions).
+3. Mac plugged in, lid open, "prevent sleeping when display is off" on.

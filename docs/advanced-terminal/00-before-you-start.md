@@ -1,3 +1,5 @@
+> **Terminal route.** This is the original, more technical version of the guide. The simpler desktop-app route is in the [main README](../../README.md). Both end up with the same skills.
+
 # Step 0 · Before you start
 
 **Time: 5 minutes.** Nothing to install yet. Just a checklist and two ideas.

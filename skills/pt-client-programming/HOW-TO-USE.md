@@ -1,6 +1,6 @@
 # How to use pt-client-programming
 
-A plain-language guide for the clinician. No terminal knowledge needed beyond the main setup guide (steps 1 to 5).
+A plain-language guide for the clinician. No terminal needed: everything happens in the Claude desktop app's **Code** tab (see the [main guide](../../README.md), steps 1 and 2).
 
 ## What you get
 
@@ -17,25 +17,13 @@ You also get, at every approval, a short **changes** file listing exactly what d
 
 ## One-time setup (10 minutes)
 
-In Ghostty (or any terminal):
-
-```bash
-cd ~/Projects/shell-we-begin && git pull
-./scripts/install-skill.sh pt-client-programming
-~/.claude/skills/pt-client-programming/scripts/setup.sh --with-pdf
-```
-
-The last line installs the document tools (including LibreOffice, a large download used only to make PDFs) and creates `~/PT-Programs/` with a file called `practice.conf`. Open that file:
-
-```bash
-open -e ~/PT-Programs/practice.conf
-```
+Follow [Step 2 of the main guide](../../docs/02-install-a-skill.md): you paste one prompt into the Code tab and Claude downloads this repo, installs the skill, and runs its setup. The setup installs the document tools (and, with `--with-pdf`, LibreOffice, a large download used only to make PDFs), creates `~/PT-Programs/`, and opens a file called `practice.conf` in TextEdit.
 
 Fill in your name, credentials, practice name, phone, email, website and scheduling link. Save. That's what goes in every header and footer.
 
 ## Day to day
 
-Open a terminal, start Claude Code anywhere (`claude`), and talk. You don't need to be in a particular folder. Claude knows where the client files live.
+Open the desktop app, Code tab, any session on your `Projects` folder, and talk. Claude knows where the client files live.
 
 ### New client
 
@@ -79,7 +67,7 @@ You get a small `.docx` with just that table, no header or footer, ready to copy
 
 ### From your phone
 
-If you set up [phone access](../../docs/07-phone-access.md), all of this works from the Claude app. Take a photo of a new exercise set-up, attach it, and say "add this photo to C-0001's images as band-row.jpg and reference it in the Exercise menu." Claude saves it on your Mac and patches the draft.
+If you set up [phone access](../../docs/03-phone.md), all of this works from the Claude app. Take a photo of a new exercise set-up, attach it, and say "add this photo to C-0001's images as band-row.jpg and reference it in the Exercise menu." Claude saves it on your Mac and patches the draft.
 
 ## Where everything lives
 
@@ -104,7 +92,7 @@ If you set up [phone access](../../docs/07-phone-access.md), all of this works f
         └── exports/              table-only and other partial exports
 ```
 
-Back up `~/PT-Programs` the way you back up any clinical record. It is never part of the public repo.
+Back up `~/PT-Programs` the way you back up any clinical record. It is never part of the public repo. To open it in Finder, say "open my PT-Programs folder in Finder."
 
 ## Things to know
 

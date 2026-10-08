@@ -12,8 +12,19 @@ If you have tried to do this with a chat assistant you know the failure modes: i
 | Edits that bleed into unrelated rows | **PATCH** copies the approved file, applies only your change, then runs a diff and shows you a before/after table. Anything outside the request is a bug it must fix before showing you. |
 | Current state vs. ideas vs. history | `approved/` holds the truth, `drafts/` holds proposals, `visits/` holds notes. `CURRENT_STATE.md` points to the one approved file. Nothing moves to approved without your explicit **APPROVE**. |
 | Guessing doses | Gaps become `[[CONFIRM: …]]` markers. Approval refuses while any remain. |
-| "Good text in chat, no usable document" | **EXPORT** builds a `.docx` with your header, footer and page numbers, embeds exercise photos, reads the file back and reports what's in it. Upload to Google Drive and it's a Google Doc. |
+| "Good text in chat, no usable document" | **EXPORT** builds three files from one source: a `.docx` with your header, footer and page numbers (upload to Google Drive and it's a Google Doc), a `.pdf` for the client, and a phone-friendly `.html` with colour-coded green/yellow/red rows. It reads the result back and reports what's in it. |
+| "What did I change last time?" | Every approval writes a **changes file**: the exact diff against the previous version, ready to become a "what's new this visit" note. |
 | Reusing exercises across clients | A `library/` of exercise descriptions and handout language, seeded from this skill, that grows as you approve new ones. Clients never read each other's folders. |
+
+## Outputs
+
+| File | For | Notes |
+|------|-----|-------|
+| `.docx` | You, editing | Header with scheduling link + page numbers, footer with contact line, bordered tables, coloured zone cells, embedded photos. Drive → Open with Google Docs. |
+| `.pdf` | The client | Converted from the .docx by LibreOffice, so it looks the same. Without LibreOffice it falls back to Google Chrome (no page numbers). |
+| `.html` | The client's phone | One self-contained file, responsive, green/yellow/red rows coloured. Text it or email it. |
+| `_changes.txt` | You | What changed since the previous approved version. |
+| `.md` | The record | Plain-text source of truth; the next visit builds on it. |
 
 ## Install
 
@@ -21,10 +32,12 @@ From the root of this repo:
 
 ```bash
 ./scripts/install-skill.sh pt-client-programming
-~/.claude/skills/pt-client-programming/scripts/setup.sh
+~/.claude/skills/pt-client-programming/scripts/setup.sh --with-pdf
 ```
 
-`setup.sh` installs two helpers (pandoc for document conversion, a small Python package for Word files), creates `~/PT-Programs/`, and copies the seed library and a `practice.conf` for you to fill in with your name, credentials, practice, and the links that go in your header and footer.
+`setup.sh` installs the document tools (pandoc, a small Python package for Word files, and with `--with-pdf` LibreOffice for PDF conversion), creates `~/PT-Programs/`, and copies the seed library and a `practice.conf` for you to fill in with your name, credentials, practice, and the links that go in your header and footer.
+
+**New here? Read [HOW-TO-USE.md](HOW-TO-USE.md)**: a plain-language walkthrough with the exact sentences to say for a new client, a visit update, an export, and an approval.
 
 Then open Claude Code anywhere and say:
 
@@ -55,6 +68,8 @@ Read [`SKILL.md`](SKILL.md) for the full rules and [`references/workflow-modes.m
 pt-client-programming/
 ├── SKILL.md                     the instructions Claude follows
 ├── README.md                    this file
+├── HOW-TO-USE.md                plain-language guide for the clinician
+├── assets/handout.css           styling for the phone-friendly HTML
 ├── references/
 │   ├── program-structure.md     anatomy of a handout; the three patterns; exact table shapes
 │   ├── style-guide.md           voice, dose grammar, how to write an exercise description
@@ -63,13 +78,13 @@ pt-client-programming/
 │   └── language-blocks.md       reusable paragraphs and tables
 ├── templates/                   blank client files and the practice.conf example
 └── scripts/
-    ├── setup.sh                 one-time: tools, workspace, seed library
+    ├── setup.sh                 one-time: tools, workspace, seed library (--with-pdf adds LibreOffice)
     ├── new_client.sh            create a client folder from templates
     ├── find_client.sh           code lookup by first name (searches profile.md only)
     ├── load_client.sh           the retrieval report
     ├── patch_check.py           diff + which sections changed + leftover markers
-    ├── build_handout.py         markdown → .docx with header/footer, verified
-    └── approve.sh               draft → approved vNNN, state + changelog updated
+    ├── build_handout.py         markdown → .docx + .pdf + .html with header/footer, verified
+    └── approve.sh               draft → approved vNNN, all formats built, changes file, state + changelog updated
 ```
 
 ## Privacy
@@ -85,4 +100,4 @@ This matters more here than in most skills, so plainly:
 
 - macOS with Homebrew (see the main guide, steps 1–5)
 - Claude Code
-- `pandoc` and Python 3 (installed by `setup.sh`)
+- `pandoc` and Python 3 (installed by `setup.sh`); LibreOffice for best-quality PDFs (`setup.sh --with-pdf`)

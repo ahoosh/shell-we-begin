@@ -24,11 +24,21 @@ title=$(grep -m1 '^title:' "$NEW" | sed -E 's/^title: *"?//; s/"? *$//' || true)
 slug=$(echo "${title:-program}" | tr -cs '[:alnum:]' '-' | sed 's/^-//; s/-$//' | cut -c1-40)
 CLIENT_COPY="$D/approved/${CODE}_${slug}_v${next}.docx"
 
-if ! "$PY" "$SKILL_DIR/scripts/build_handout.py" "$NEW" --out "${NEW%.md}.docx" --strict; then
+if ! "$PY" "$SKILL_DIR/scripts/build_handout.py" "$NEW" --out "${NEW%.md}.docx" --all --strict; then
   rm -f "$NEW" "${NEW%.md}.docx"
   echo; echo "REFUSED: handout build failed (see report above). Nothing was approved; draft left in place."; exit 6
 fi
 cp "${NEW%.md}.docx" "$CLIENT_COPY"
+[[ -f "${NEW%.md}.pdf" ]] && cp "${NEW%.md}.pdf" "${CLIENT_COPY%.docx}.pdf"
+[[ -f "${NEW%.md}.html" ]] && cp "${NEW%.md}.html" "${CLIENT_COPY%.docx}.html"
+
+# what changed since the previous approved version (for the clinician and for an "Updates this visit" note)
+prev=$(ls -1 "$D/approved"/v[0-9][0-9][0-9]_*.md 2>/dev/null | grep -v "$(basename "$NEW")" | sort | tail -1 || true)
+if [[ -n "$prev" ]]; then
+  "$PY" "$SKILL_DIR/scripts/patch_check.py" "$prev" "$NEW" > "${NEW%.md}_changes.txt" || true
+else
+  echo "First approved version — no previous version to compare." > "${NEW%.md}_changes.txt"
+fi
 
 # update state
 sed -i '' -e "s|^approved_version:.*|approved_version: v${next}|" \
@@ -43,8 +53,9 @@ cat <<MSG
 
 APPROVED — $CODE
 new version:  approved/$(basename "$NEW")
-handout:      approved/$(basename "${NEW%.md}.docx")
-client copy:  approved/$(basename "$CLIENT_COPY")
+handout:      approved/$(basename "${NEW%.md}.docx")$([[ -f "${NEW%.md}.pdf" ]] && echo " + .pdf")$([[ -f "${NEW%.md}.html" ]] && echo " + .html")
+client copy:  approved/$(basename "$CLIENT_COPY")$([[ -f "${CLIENT_COPY%.docx}.pdf" ]] && echo " (+ .pdf, .html)")
+changes:      approved/$(basename "${NEW%.md}_changes.txt")  (diff vs previous version)
 CURRENT_STATE.md updated (approved_version: v${next}, approved_date: ${TODAY})
 CHANGELOG.md appended: ${MSG}
 draft archived: drafts/archive/$(basename "$DRAFT")

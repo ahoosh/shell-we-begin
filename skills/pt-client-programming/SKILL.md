@@ -28,7 +28,8 @@ PT-Programs/
 ├── practice.conf            clinician name, credentials, practice, contact, links (header/footer)
 ├── library/
 │   ├── exercises.md         reusable exercise descriptions (seeded from references/exercise-library.md)
-│   └── language.md          reusable handout language (seeded from references/language-blocks.md)
+│   ├── language.md          reusable handout language (seeded from references/language-blocks.md)
+│   └── images/              exercise photos shared across clients (referenced as images/<file>)
 └── clients/
     └── <CODE>/              client code only, never a name (e.g. C-0427)
         ├── profile.md       first name, age band, pronouns, contact preference — the ONLY file with identity
@@ -37,7 +38,7 @@ PT-Programs/
         ├── CHANGELOG.md     one line per approved version
         ├── visits/          dated visit notes: 2026-10-07.md
         ├── drafts/          unapproved work: draft_2026-10-14_a.md
-        ├── approved/        v001_2026-10-07.md (+ .docx)  … only via APPROVE
+        ├── approved/        v001_2026-10-07.md + .docx .pdf .html + _changes.txt … only via APPROVE
         ├── adjuncts/        linked sport/role-specific documents
         ├── images/          exercise photos referenced from the program
         └── exports/         TABLE ONLY and other partial exports
@@ -80,12 +81,17 @@ Output modifiers the clinician may add:
 Modifiers restrict the output; they never widen the edit.
 
 ### EXPORT
-`${CLAUDE_SKILL_DIR}/scripts/build_handout.py <file.md> --out <file.docx>` builds the handout with header, footer, page numbers, bordered tables and embedded images. The script reads the document back and prints a verification report (headings, tables, images, leftover markers). Paste that report. Then say the full path and remind them: upload to Google Drive → right-click → Open with Google Docs to get an editable Doc.
-Export a draft when asked to review it; export the approved file for the client. Name the client's copy `<CODE>_<Title>_v<NNN>.docx`; the draft `draft_…_REVIEW.docx`.
+`${CLAUDE_SKILL_DIR}/scripts/build_handout.py <file.md> --out <file.docx> --all` builds three files from one source:
+- `.docx` – editable; header (schedule link + page numbers), footer (contact line), bordered tables, coloured GREEN/YELLOW/RED cells, embedded images. For Google Docs: upload to Drive → right-click → Open with Google Docs.
+- `.pdf` – the client-facing copy, converted from the .docx by LibreOffice (identical look). If LibreOffice is missing the script falls back to Google Chrome (no page numbers) and says so; offer `setup.sh --with-pdf` once.
+- `.html` – single-file, phone-friendly version with colour-coded zone rows; clients can open it from a text or email.
+Use `--all` by default. The script reads the .docx back and prints a verification report (headings, tables, images, markers, which converter made the PDF). Paste it and list the three paths.
+Export a draft when asked to review it (`drafts/draft_…_REVIEW.docx`); the approved file is exported automatically by APPROVE as `approved/vNNN_<date>.*` plus the client-named copies `approved/<CODE>_<Title>_vNNN.*`.
+Images: reference them as `images/<file>`; the builder looks in the client's `images/` and then the shared `library/images/`. Put reusable exercise photos in the library so every client's handout can use them.
 
 ### APPROVE
 Only on an explicit instruction naming the draft ("approve draft_2026-10-14_b"). Refuse if `[[CONFIRM]]` or `[[MISSING]]` markers remain, listing them.
-`${CLAUDE_SKILL_DIR}/scripts/approve.sh <CODE> <draft.md> "<one-line change summary>"` copies it to `approved/vNNN_<date>.md`, builds the `.docx` beside it, updates `CURRENT_STATE.md`, appends to `CHANGELOG.md`, and archives the draft. Paste the script output.
+`${CLAUDE_SKILL_DIR}/scripts/approve.sh <CODE> <draft.md> "<one-line change summary>"` copies it to `approved/vNNN_<date>.md`, builds `.docx` + `.pdf` + `.html` beside it (and client-named copies), writes `vNNN_<date>_changes.txt` (the diff against the previous approved version), updates `CURRENT_STATE.md`, appends to `CHANGELOG.md`, and archives the draft. Paste the script output. If the clinician wants an "Updates this visit" paragraph at the top of the handout (the complex pattern has one), draft it from the changes file and PATCH it in before approving; never add it silently.
 
 ### LOAD / STATUS
 Just the retrieval report plus a two-line status in plain words.
@@ -121,4 +127,6 @@ Just the retrieval report plus a two-line status in plain words.
 - `references/exercise-library.md` – seed library (side-neutral descriptions). Copied to `library/exercises.md` at setup; edit the copy, not the seed.
 - `references/language-blocks.md` – reusable paragraphs and tables (symptom guides, flare plan, coach guide, check-in log).
 - `templates/` – `program.md`, `adjunct.md`, `CURRENT_STATE.md`, `intake.md`, `profile.md`, `visit.md`, `change-review.md`, `practice.conf.example`, and `example-first-visit.md`, a complete first-visit handout (fictional client) showing the target output.
-- `scripts/` – `setup.sh`, `new_client.sh`, `find_client.sh`, `load_client.sh`, `patch_check.py`, `build_handout.py`, `approve.sh`.
+- `scripts/` – `setup.sh [--with-pdf]`, `new_client.sh`, `find_client.sh`, `load_client.sh`, `patch_check.py`, `build_handout.py`, `approve.sh`.
+- `assets/handout.css` – styling for the HTML/phone version.
+- `HOW-TO-USE.md` – the clinician's plain-language guide. Point them to it when they ask "how do I…".

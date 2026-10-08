@@ -79,7 +79,7 @@ Skills are folders with instructions that Claude Code reads automatically. Insta
 
 | Skill | For whom | What it does |
 |-------|----------|--------------|
-| [`pt-client-programming`](skills/pt-client-programming/) | Physical therapists and other clinicians who write client exercise programs | Keeps one **approved** program per client, makes **surgical edits** without touching anything else, shows you a before/after review, and exports a polished Word/Google Docs handout with your header and footer. Built around a real therapist's workflow. |
+| [`pt-client-programming`](skills/pt-client-programming/) | Physical therapists and other clinicians who write client exercise programs | Keeps one **approved** program per client, makes **surgical edits** without touching anything else, shows you a before/after review, and exports a polished handout as Word/Google Docs, PDF, and a phone-friendly web page with your header and footer. Built around a real therapist's workflow. [How to use it](skills/pt-client-programming/HOW-TO-USE.md). |
 
 More skills will appear here over time. Have a job you repeat every week? [Open an issue](../../issues) and describe it.
 

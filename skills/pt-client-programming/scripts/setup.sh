@@ -30,7 +30,24 @@ fi
 echo "-- python-docx: $("$PY" -c 'import docx, importlib.metadata as m; print(m.version("python-docx"))')"
 
 # 3. folders
-mkdir -p "$PT_HOME/clients" "$PT_HOME/library"
+mkdir -p "$PT_HOME/clients" "$PT_HOME/library" "$PT_HOME/library/images"
+
+# 3b. PDF converter (optional, ~500 MB). LibreOffice turns the .docx into a PDF
+#     with identical header, footer and page numbers. Run: setup.sh --with-pdf
+if [[ "${1:-}" == "--with-pdf" ]]; then
+  if [[ ! -x /Applications/LibreOffice.app/Contents/MacOS/soffice ]] && ! command -v soffice >/dev/null 2>&1; then
+    echo "-- installing LibreOffice for PDF export (large download)"
+    brew install --cask libreoffice
+  fi
+  echo "-- PDF export: LibreOffice available"
+else
+  if [[ -x /Applications/LibreOffice.app/Contents/MacOS/soffice ]] || command -v soffice >/dev/null 2>&1; then
+    echo "-- PDF export: LibreOffice available"
+  else
+    echo "-- PDF export: LibreOffice not installed. PDFs will use Google Chrome if present (no page numbers)."
+    echo "   For full-quality PDFs run:  $SKILL_DIR/scripts/setup.sh --with-pdf"
+  fi
+fi
 
 # 4. seed library (never overwrite an existing copy)
 for pair in "exercise-library.md:exercises.md" "language-blocks.md:language.md"; do
@@ -60,5 +77,6 @@ Workspace layout:
   $PT_HOME/practice.conf
   $PT_HOME/library/exercises.md
   $PT_HOME/library/language.md
+  $PT_HOME/library/images/        shared exercise photos, reused across clients by file name
   $PT_HOME/clients/<CODE>/...
 MSG

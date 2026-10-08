@@ -1,8 +1,9 @@
-<!-- Fictional example client. Structure and doses are illustrative. -->
 ---
 title: "Right Shoulder Recovery"
 subtitle: "Build comfortable movement and strength for reaching and lifting, one step at a time."
 ---
+
+<!-- Fictional example client. Structure and doses are illustrative. -->
 
 # Your goal
 

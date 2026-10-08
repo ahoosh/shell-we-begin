@@ -52,7 +52,7 @@ git pull
 
 | Skill | What it's for | Setup guide |
 |-------|---------------|-------------|
-| `pt-client-programming` | Clinicians who write and update client exercise programs. Approved versions, surgical patches, before/after review, Word/Google Docs export. | [README](../skills/pt-client-programming/README.md) |
+| `pt-client-programming` | Clinicians who write and update client exercise programs. Approved versions, surgical patches, before/after review, Word/Google Docs + PDF + phone-friendly HTML export. | [How to use](../skills/pt-client-programming/HOW-TO-USE.md) · [README](../skills/pt-client-programming/README.md) |
 
 ## Make your own
 

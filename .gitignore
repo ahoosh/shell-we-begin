@@ -1,0 +1,9 @@
+.DS_Store
+.venv/
+__pycache__/
+*.pyc
+# never commit real client data
+PT-Programs/
+clients/
+practice.conf
+.pii-denylist

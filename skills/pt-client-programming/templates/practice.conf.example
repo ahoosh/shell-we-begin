@@ -1,0 +1,23 @@
+# practice.conf — fills the handout header and footer. Plain "key: value" lines.
+# Copy to ~/PT-Programs/practice.conf and edit. Leave a value empty to omit it.
+
+clinician_name: Dr. Jane Example, PT, DPT
+clinician_first_name: Jane
+practice_name: Example Movement Clinic
+practice_url: https://www.example.com
+schedule_text: Schedule your next session
+schedule_url: https://example.com/schedule
+phone: 555-010-0000
+fax:
+email: hello@example.com
+
+# Header line shown at the top of every page (page number is added automatically).
+# Available placeholders: {clinician_name} {clinician_first_name} {practice_name} {schedule_text}
+header_text: {schedule_text}
+
+# Footer line(s). Use | to separate items; use " // " (with spaces around it) to start a second line.
+footer_text: {clinician_name} | {practice_name} | {schedule_text} // Ph: {phone} | {email} | {practice_url}
+
+# Document defaults
+font_name: Calibri
+font_size: 11

@@ -1,6 +1,6 @@
 # Workflow modes, worked examples
 
-Client code `C-0427`, first name "Sam", left shoulder, progressed pattern. All paths relative to `~/PT-Programs/clients/C-0427/`.
+Client code `C-0427`, first name "Sam" (fictional), left shoulder, progressed pattern. All paths relative to `~/PT-Programs/clients/C-0427/`.
 
 ## The retrieval report (every task)
 
@@ -22,7 +22,7 @@ Paste it. Then one sentence: "I have the full approved v003 loaded, not a summar
 
 ## DISCUSS
 
-> **Clinician:** Sam's hangs were yellow for two sessions. Thoughts?
+> **Clinician:** Sam's overhead pulldowns were yellow for two sessions. Thoughts?
 
 You answer in prose. Options with reasoning, labelled `Suggestion:`. You may quote the approved ladder rows to anchor the discussion. You do not write to `drafts/` or `approved/`. If asked to note it: append to `visits/2026-10-07.md` under `## Discussed, not adopted`.
 
@@ -98,7 +98,7 @@ Write `exports/2026-10-07_phase2-table.md` containing just that table (with its 
 BUILD REPORT
 source:   drafts/draft_2026-10-07_a.md
 output:   drafts/draft_2026-10-07_a_REVIEW.docx  (84 KB)
-title:    Left Shoulder: Build Toward Climbing and Paddling
+title:    Left Shoulder: Build Toward Overhead Reaching and Lifting
 headings: 11 (H1) · 3 (H2)
 tables:   9   rows: 61
 images:   4 embedded, 0 missing
@@ -131,7 +131,7 @@ Next visit, the retrieval report shows v004. That's the whole continuity mechani
 
 ## Mixed request
 
-> **Clinician:** Add the band row (2×8–12) to Phase 2, and do you think she's ready for step 3 of the hanging ladder?
+> **Clinician:** Add the band row (2×8–12) to Phase 2, and do you think they're ready for step 3 of the pulling ladder?
 
 Answer in two labelled parts:
 

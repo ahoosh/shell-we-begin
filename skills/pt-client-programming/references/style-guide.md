@@ -6,7 +6,7 @@ The clinician's voice, distilled from their handouts. Match it; don't improve on
 
 - **Second person, present tense, warm.** "Your body adapts to the right challenge, and recovery is part of the process."
 - **Plain words first, term second.** "Shoulder extension means moving your arm behind your body." "Isotonic means moving against resistance." Explain once, then use the term.
-- **Working impressions, never diagnoses.** "Your findings suggest irritation involving the rotator cuff, the muscles that help guide and lift your arm… These are working impressions, not confirmed diagnoses." Imaging is context, not the plan: "your symptoms and function will guide the program rather than the scan or calendar alone."
+- **Working impressions, never diagnoses.** "Your findings suggest a sensitive rotator cuff, the muscles that help guide and lift your arm… These are working impressions, not confirmed diagnoses." Imaging is context, not the plan: "your symptoms and function will guide the program rather than the scan or calendar alone."
 - **Permission to back off, without shame.** "A yellow day means changing the dose, not failure." "No make-up workouts. A modified or missed day does not create a debt."
 - **Sentences are short.** One instruction per sentence. Lists of adjustable variables are fine in one sentence: "Reduce range, resistance, repetitions, sets, speed, or time."
 - **Noise and sensation are information.** "A painless click with steady control may remain green." "A painless pop that does not change symptoms is information, not a challenge to repeat."
@@ -53,7 +53,7 @@ Each cell: one progression sentence, then one regression sentence. Keep both con
 
 > Build toward 2 sets of 12–15 with steady height. Regress to a smaller range, more hand support, or fewer repetitions.
 
-If the clinician reserves a progression for themselves, say so: "{{clinician_first_name}} will reassess daily-activity tolerance before hanging."
+If the clinician reserves a progression for themselves, say so: "{{clinician_first_name}} will reassess daily-activity tolerance before the loaded steps."
 
 ## How to write an exercise description (Exercise menu)
 
@@ -73,7 +73,7 @@ Name exercises consistently across the phase table and the menu: same words, sam
 - Heading 1 for every main section. Use sentence case except the words GREEN / YELLOW / RED.
 - Phase headings: `Phase 1 — Comfortable motion and basic control` (em dash, or a plain space if the clinician's older documents use that).
 - Complex-pattern programs number the sections: `1. Daily planning & symptom check`, `2. …`.
-- Heading 2 inside a section for routines (`Routine A — …`), sub-plans (`The racing path`), and warm-ups.
+- Heading 2 inside a section for routines (`Routine A — …`), sub-plans (`The return path`), and warm-ups.
 
 ## Bold labels
 

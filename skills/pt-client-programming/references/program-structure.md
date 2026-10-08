@@ -18,8 +18,8 @@ Ask the clinician which pattern, or infer from how many visits and how many doma
 
 ```markdown
 ---
-title: "Left Shoulder: Build Toward Climbing and Paddling"
-subtitle: "Build comfortable motion, shoulder control, pulling strength, and load tolerance, one step at a time."
+title: "Left Shoulder: Build Toward Overhead Reaching and Lifting"
+subtitle: "Build comfortable motion, shoulder control, and load tolerance, one step at a time."
 ---
 ```
 
@@ -28,7 +28,7 @@ Title = region + goal, in the client's words where possible. Subtitle = one sent
 For the complex pattern, add adjunct links right under the title:
 
 ```markdown
-> **Cross-country adjunct:** running stages, practice drills, coach modifications. *(see adjuncts/cross-country.md)*
+> **Running adjunct:** running stages, practice drills, coach modifications. *(see adjuncts/running.md)*
 ```
 
 ### 1. Your goal (Heading 1)
@@ -85,7 +85,7 @@ Optional note lines after a table start with a bold label: `**Rotation:** Isoton
 
 Routines inside a phase (A / B) are Heading 2: `## Routine A — Lower-body loading and carrying`.
 
-### 6. Ladders (Heading 1: "Pulldown and hanging ladder", "Heel raise ladder")
+### 6. Ladders (Heading 1: "Overhead pulling ladder", "Heel raise ladder")
 
 Lead-in: where to start, what must be green first, what the clinician checks before the loaded steps.
 
@@ -108,11 +108,11 @@ An alternative ladder shape used for a single-joint progression with a plan row:
 | 1 Two-leg floor heel raise | … | … |
 ```
 
-### 7. Return to activity (Heading 1: "Return to climbing and paddling", "Cross-country return", "Soccer return")
+### 7. Return to activity (Heading 1: "Return to sport", "Running return", "Return to lifting")
 
 ```markdown
-| Stage | Rock climbing | Paddling |
-|-------|---------------|----------|
+| Stage | Activity A (e.g. gym) | Activity B (e.g. field sport) |
+|-------|-----------------------|-------------------------------|
 | 1 Technique | … | … |
 ```
 
@@ -128,7 +128,7 @@ Follow with `**Activity response:**` paragraph.
 
 ### 8. Daily-life adjustments (Heading 1: "Helpful day-to-day adjustments" / "Adjust daily activities while symptoms settle")
 
-Short paragraphs with a bold lead word: `**Sleep:** …`, `**Work and transfers:** …`, `**Hiking and biking:** …`.
+Short paragraphs with a bold lead word: `**Sleep:** …`, `**Work and transfers:** …`, `**Recreation:** …`.
 
 ### 9. Tools and links (optional)
 
@@ -180,5 +180,5 @@ Separate files in `adjuncts/`, built from `templates/adjunct.md`. They open with
 | Client copy of the handout | `approved/C-0427_Left-Shoulder_v003.docx` |
 | Review export of a draft | `drafts/draft_2026-10-14_a_REVIEW.docx` |
 | Table-only export | `exports/2026-10-14_phase2-table.md` / `.docx` |
-| Adjunct | `adjuncts/cross-country.md` (+ versioned approved copies in `approved/adjunct_cross-country_v002_2026-10-14.md`) |
+| Adjunct | `adjuncts/running.md` (+ versioned approved copies in `approved/adjunct_running_v002_2026-10-14.md`) |
 | Visit note | `visits/2026-10-14.md` |

@@ -1,3 +1,4 @@
+<!-- Fictional example client. Structure and doses are illustrative. -->
 ---
 title: "Right Shoulder Recovery"
 subtitle: "Build comfortable movement and strength for reaching and lifting, one step at a time."
@@ -5,9 +6,9 @@ subtitle: "Build comfortable movement and strength for reaching and lifting, one
 
 # Your goal
 
-Build comfortable movement and strength for reaching and lifting. We will use four exercises, starting with supported movement and light effort, then adding load as your shoulder tolerates it.
+Build comfortable movement and strength for reaching into cupboards and lifting at home. We will use four exercises, starting with supported movement and light effort, then adding load as your shoulder tolerates it.
 
-Your findings suggest irritation involving the rotator cuff, the muscles that help guide and lift your arm, with possible involvement of the biceps tendon at the front of your shoulder. These are working impressions, not confirmed diagnoses.
+Your findings suggest a sensitive rotator cuff, the group of muscles that help guide and lift your arm. These are working impressions, not confirmed diagnoses.
 
 # Your symptom guide
 
@@ -19,7 +20,7 @@ Your findings suggest irritation involving the rotator cuff, the muscles that he
 
 # Adjusting challenge and recovery
 
-Your body adapts to the right challenge over time, and recovery is part of that process. Exercise is only one part of your load. Gardening, carrying, chores, work, travel, and recreation also count. Busy days may need a lighter shoulder session.
+Your body adapts to the right challenge over time, and recovery is part of that process. Exercise is only one part of your load. Carrying, chores, work, travel, and recreation also count. Busy days may need a lighter shoulder session.
 
 A yellow day does not mean failure. Use a smaller range, lighter effort, fewer repetitions, or an easier version of these same exercises. This can be an active recovery day. Build again when movement, confidence, and your next-day response return to green.
 

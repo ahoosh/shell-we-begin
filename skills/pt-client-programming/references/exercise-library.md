@@ -51,32 +51,17 @@ Hinge forward at the hips with a flat back, or lie face down on a bench for ches
 ### Standing band row
 Stand facing the anchor with a band in both hands, arms forward. Pull the hands toward the ribs, drawing the shoulder blades back and down, then return slowly. Keep the trunk tall and the neck relaxed. Progress from low elbows to higher elbows as assigned; reduce resistance or angle if yellow.
 
-### FlexBar rhythmic stabilisation
-Hold the bar in both hands in front of you, elbows bent, and create a gentle oscillation through the bar while keeping the shoulders steady. Begin lying on your back or with bent elbows; progress to longer arms forward, then farther to the side. Reduce time, speed, resistance, or arm length if yellow.
-
 ### High-anchor pulldown
 Hold a band anchored above head height with the working arm, beginning below full overhead reach. Pull down toward the hip with the elbow leading, then return slowly. Build comfortable reach, then repetitions and resistance.
 
 ### Overhead pulldown
 Hold a band or cable anchored overhead with both hands through the cleared overhead range. Pull toward the upper chest, drawing the shoulder blades down, then return slowly. Reduce reach or resistance if needed.
 
-### Feet-supported active hang
-Hold a secure bar with the feet on a stable platform carrying most of your weight. Draw the shoulders gently down away from the ears and hold, breathing normally. Build holds toward 15–20 seconds, then use slightly less leg support. Do not drop into a hang.
-
-### Assisted pull-up
-Use feet on a stable platform or an assisted machine. Pull smoothly through the cleared range and lower with control. Build smooth range and repetitions before reducing assistance.
-
 ### Unloaded reach behind the hip
 Stand tall and reach the working hand a small, comfortable distance behind the hip with the elbow straight or softly bent. Increase reach without arching the back or rolling the shoulder forward.
 
 ### Light-band shoulder extension
 Hold a band anchored in front of you with the working arm. Pull from slightly in front of the hip to the hip, then a little behind when green. Keep the shoulder back and the ribs quiet. Build range before band tension.
-
-### Supported extension weight shift
-Place the hands on a secure surface slightly behind the hips with the feet bearing most of your weight. Shift a small amount of weight into the hands and return. Add a small shift before reducing leg support.
-
-### Assisted dip support and shallow dip
-Use secure parallel handles and strong foot or machine assistance. Start in the top support position, then add a small lower-and-press motion within a controlled depth. Return to supported shifts if yellow.
 
 ## Hip — mobility
 
@@ -238,6 +223,3 @@ Lie on your back with knees bent. Gently flatten the low back, then create a sma
 
 ### Ball massage against the wall
 Place a ball between the wall and the muscles of the outer or back hip (or the area {{clinician_first_name}} showed you). Lean gently and move slowly over the muscle, 30–60 seconds per area. Avoid bony points and any area that produces sharp or spreading symptoms.
-
-### Abdominal massage for constipation (routine)
-Use the 8–10-minute routine from the language blocks: settle (1 min), warm-up circles (1 min), follow the colon path clockwise (3 min), I–L–U strokes (2 min), comfort circles (1.5 min), finish (1.5 min). Pressure 2–3/10, no digging. Do not massage with constant or severe belly pain, vomiting, fever, blood, or a hard swollen belly; contact a medical professional for those.

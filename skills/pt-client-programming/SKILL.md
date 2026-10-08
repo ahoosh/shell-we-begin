@@ -54,7 +54,7 @@ All scripts live in `${CLAUDE_SKILL_DIR}/scripts/`. Run them with that prefix re
 
 ## Modes
 
-The clinician may use ordinary language. Map it to a mode and say so. If the request mixes modes (for example "add two exercises, and what do you think about adding hangs?"), split it: PATCH the concrete change, DISCUSS the question, keep them separate in the output.
+The clinician may use ordinary language. Map it to a mode and say so. If the request mixes modes (for example "add two exercises, and what do you think about adding a step-up?"), split it: PATCH the concrete change, DISCUSS the question, keep them separate in the output.
 
 ### DISCUSS
 Think with the clinician. Options, progressions, regressions, load management, organisation of a plan. Nothing is written to `approved/` or `drafts/`. Label every suggestion as a suggestion. If they want it captured, write it to `visits/<date>.md` under "Discussed, not adopted".

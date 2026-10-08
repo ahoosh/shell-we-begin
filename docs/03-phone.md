@@ -10,11 +10,15 @@ Requirements: Pro or Max plan, the Claude app on your phone signed in with the s
 
 App Store (iPhone) or Google Play (Android): search **Claude by Anthropic**. Sign in with the same account. Allow notifications.
 
-## 2. Turn on Remote Control for a session
+## 2. Turn Remote Control on for all sessions (recommended)
 
-In the desktop app, open a session. In the toolbar, before the session title, there is a small **laptop icon**. Click it and turn on the **Remote Control** switch. (Typing `/remote-control` in the prompt box does the same.) The icon lights up when connected.
+Remote Control is **off for every new session unless you say otherwise**, which is why a session you expect to see on your phone is often simply not connected. Set it once and forget it:
 
-To make every new session reachable automatically: **Settings → Claude Code → Connect new sessions to Remote Control** → on.
+**Settings → Claude Code → Connect new sessions to Remote Control** → on.
+
+(Behind the scenes this writes `remoteControlAtStartup: true` into your Claude settings. It also applies if you ever use the terminal version.)
+
+For a session that was already open before you changed the setting, or if you'd rather connect one at a time: in the toolbar, before the session title, there is a small **laptop icon**. Click it and turn on the **Remote Control** switch, or type `/remote-control` in the prompt box. The icon lights up when connected.
 
 ## 3. Find it on your phone
 

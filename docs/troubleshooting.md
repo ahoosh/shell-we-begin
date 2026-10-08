@@ -27,7 +27,7 @@ Fine. The install prompt in [Step 2](02-install-a-skill.md) tells Claude to down
 ## My phone can't see the session
 
 1. Mac awake and online? ([Step 3, section 4](03-phone.md#4-keep-your-mac-awake))
-2. Laptop icon lit up next to the session title? If not, click it → Remote Control on.
+2. Laptop icon lit up next to the session title? If not, the session isn't connected: click it → Remote Control on. To stop this happening, turn on **Settings → Claude Code → Connect new sessions to Remote Control**.
 3. Same account on phone and Mac?
 4. If the Mac was offline for more than ten minutes, the connection drops. Turn the switch off and on again.
 

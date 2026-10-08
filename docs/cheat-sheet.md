@@ -11,7 +11,7 @@
 | Change how much it asks | Permission selector: Manual · Accept edits · Auto · Plan |
 | Review what changed | Click the `+12 −1` indicator → diff view |
 | Second task at once | Sidebar → New session |
-| Phone access | Laptop icon by the session title → **Remote Control** on |
+| Phone access | Settings → Claude Code → **Connect new sessions to Remote Control** on (once); per session: laptop icon → Remote Control |
 | Settings | `/config` or the app's **Settings → Claude Code** |
 
 ## Install / update a skill (paste into a session)
@@ -35,5 +35,5 @@ Modifiers: `ROW PATCH ONLY` · `TABLE ONLY` · `TABLE ONLY — DOCX` · `PLAIN T
 ## Phone
 
 1. Claude app on the phone, same account, notifications on.
-2. Laptop icon → Remote Control on (or Settings → Claude Code → connect new sessions).
+2. Settings → Claude Code → Connect new sessions to Remote Control → on. (Already-open session: laptop icon → Remote Control on.)
 3. Mac plugged in, lid open, "prevent sleeping when display is off" on.

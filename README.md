@@ -78,6 +78,10 @@ This is a living page. The app changes, and I learn better ways to explain thing
 
 The original version of this guide, which sets up a terminal (Ghostty), fonts, a session manager (Herdr) and the command-line Claude Code, lives in [`docs/advanced-terminal/`](docs/advanced-terminal/). Everything in the skills works the same either way.
 
+## Maintaining this repo
+
+For Abbas and the agents working on this guide, not for readers. Work is tracked in Linear: workspace `likeabbas`, team `LIK`, project **Shell We Begin** (`P-LIK-3`). An issue (`LIK-<ID>`) states Objective, Scope, Out of scope, Acceptance criteria and Verification; only issues in **Todo** may be started, and an issue labelled `draft` is never picked up (it is released by removing the label and moving it to Todo). Branch `lik<ID>/<slug>`, commit title `LIK-<ID> <title>`, merge to `main`, then comment on the issue (add the `needs-review` label if Abbas should look first) and move it to Done. Reader requests that arrive as GitHub issues become Linear issues before anyone works on them. Anything started before 2026-10-29 keeps whatever identity it had until it is done.
+
 ## License
 
 MIT. Copy it, fork it, share it with your own non-technical friends.
